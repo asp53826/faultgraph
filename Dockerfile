@@ -5,7 +5,7 @@ RUN npm ci
 COPY apps/web/ ./
 RUN npm run build
 
-FROM python:3.13-slim-bookworm AS python-build
+FROM python:3.14-slim-bookworm AS python-build
 ENV PIP_DISABLE_PIP_VERSION_CHECK=1 \
     PIP_NO_CACHE_DIR=1
 WORKDIR /build
@@ -13,7 +13,7 @@ COPY pyproject.toml README.md LICENSE ./
 COPY src/ ./src/
 RUN python -m pip install --upgrade pip build && python -m build --wheel
 
-FROM python:3.13-slim-bookworm AS runtime
+FROM python:3.14-slim-bookworm AS runtime
 ENV PYTHONDONTWRITEBYTECODE=1 \
     PYTHONUNBUFFERED=1 \
     FAULTGRAPH_DATABASE_PATH=/data/faultgraph.db \
