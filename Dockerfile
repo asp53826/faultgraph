@@ -24,8 +24,8 @@ RUN groupadd --system --gid 10001 faultgraph \
     && useradd --system --uid 10001 --gid faultgraph --home-dir /nonexistent faultgraph \
     && mkdir -p /app/static /data \
     && chown faultgraph:faultgraph /data
-COPY --from=python-build /build/dist/*.whl /tmp/faultgraph.whl
-RUN python -m pip install --no-cache-dir /tmp/faultgraph.whl && rm /tmp/faultgraph.whl
+COPY --from=python-build /build/dist/ /tmp/wheels/
+RUN python -m pip install --no-cache-dir /tmp/wheels/*.whl && rm -r /tmp/wheels
 COPY --from=web-build /build/apps/web/dist/ /app/static/
 USER 10001:10001
 WORKDIR /app
