@@ -1,0 +1,32 @@
+{
+  "name": "FaultGraph forensic workbench",
+  "stack": ["React", "TypeScript", "Vite", "FastAPI", "CSS variables"],
+  "intent": "Dense causal incident investigation for platform engineers and researchers",
+  "signature": "Observed-versus-counterfactual causal field aligned with a propagation tape",
+  "primitives": [
+    "semantic native controls",
+    "React Flow canvas",
+    "Radix dialog for command search",
+    "tabular evidence tables"
+  ],
+  "tokens": {
+    "canvas": "#091113",
+    "surface": "#10191b",
+    "raised": "#152123",
+    "text": "#e3ece9",
+    "muted": "#92a39f",
+    "trace": "#86c8bf",
+    "fault": "#e7a15a",
+    "confirmed": "#d66c66",
+    "contradiction": "#a791d4"
+  },
+  "constraints": [
+    "no gradients",
+    "no glassmorphism",
+    "no KPI card grid",
+    "no decorative network animation",
+    "keyboard accessible",
+    "responsive down to 360px",
+    "prefers-reduced-motion supported"
+  ]
+}

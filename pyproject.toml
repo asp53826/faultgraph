@@ -1,0 +1,58 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "faultgraph"
+version = "0.1.0"
+description = "Evidence-first causal incident analysis for distributed systems"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "Aaryan Patel" }]
+dependencies = [
+  "fastapi>=0.116,<1",
+  "pydantic>=2.11,<3",
+  "pydantic-settings>=2.10,<3",
+  "uvicorn[standard]>=0.35,<1"
+]
+
+[dependency-groups]
+dev = [
+  "httpx>=0.28,<1",
+  "mypy>=1.17,<2",
+  "pytest>=8.4,<9",
+  "pytest-cov>=6.2,<7",
+  "ruff>=0.12,<1"
+]
+
+[project.scripts]
+faultgraph = "faultgraph.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/faultgraph"]
+
+[tool.pytest.ini_options]
+addopts = "-q --strict-markers"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+packages = ["faultgraph"]
+plugins = ["pydantic.mypy"]
+
+[tool.coverage.run]
+source = ["faultgraph"]
+branch = true
+
+[tool.coverage.report]
+fail_under = 85
+show_missing = true

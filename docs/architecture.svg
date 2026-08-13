@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">FaultGraph architecture</title>
+  <desc id="desc">Telemetry, topology, and evidence flow through an influence engine into a typed API and investigation workbench. Replays are written to an experiment ledger.</desc>
+  <rect width="1200" height="360" fill="#0b1214"/>
+  <g fill="none" stroke="#29413f" stroke-width="2">
+    <path d="M250 92H410"/><path d="M250 180H410"/><path d="M250 268H410"/><path d="M600 180H730"/><path d="M920 180H1050V270H920"/>
+  </g>
+  <g fill="#3dd6a5"><path d="m400 86 12 6-12 6z"/><path d="m400 174 12 6-12 6z"/><path d="m400 262 12 6-12 6z"/><path d="m720 174 12 6-12 6z"/><path d="m930 264-12 6 12 6z"/></g>
+  <g font-family="ui-monospace, monospace" font-size="13" fill="#6f8582">
+    <text x="60" y="35">OBSERVED INPUTS</text><text x="445" y="35">INFERENCE</text><text x="755" y="35">OPERATOR SURFACE</text>
+  </g>
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <g fill="#101b1d" stroke="#29413f"><rect x="55" y="58" width="195" height="68"/><rect x="55" y="146" width="195" height="68"/><rect x="55" y="234" width="195" height="68"/><rect x="410" y="110" width="190" height="140" stroke="#3dd6a5"/><rect x="730" y="110" width="190" height="140"/><rect x="920" y="240" width="210" height="62"/></g>
+    <g fill="#d8eae6" font-size="17" font-weight="600"><text x="152" y="89">Telemetry</text><text x="152" y="177">Causal topology</text><text x="152" y="265">Evidence ledger</text><text x="505" y="168">Influence engine</text><text x="825" y="168">Typed API + UI</text><text x="1025" y="277">Replay ledger</text></g>
+    <g fill="#6f8582" font-size="12"><text x="152" y="108">onsets · baselines · deltas</text><text x="152" y="196">coefficients · lags · cycles</text><text x="152" y="284">support · contradiction · SHA-256</text><text x="505" y="191">rank · intervene · falsify</text><text x="825" y="191">compare · inspect · replay</text></g>
+  </g>
+</svg>
